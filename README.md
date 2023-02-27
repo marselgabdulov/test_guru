@@ -1,24 +1,12 @@
-# README
+# TestGuru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RoR приложение для создания, управления и выполнения различных тестов. Приложение создается в рамках интенсива по Ruby on Rails от школы [Thinknetica](https://thinknetica.com/).
 
-Things you may want to cover:
+## Сущности
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Пользователи (администраторы и простые пользователи)
+- Категории тестов
+- Тесты
+- Вопросы
+- Ответы
+- Результат
