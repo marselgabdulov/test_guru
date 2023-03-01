@@ -3,11 +3,9 @@
 one:
   body: MyText
   correct: false
-  user: one
   question: one
 
 two:
   body: MyText
   correct: false
-  user: two
   question: two
