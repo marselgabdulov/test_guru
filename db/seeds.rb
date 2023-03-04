@@ -17,9 +17,9 @@ common_category = Category.create(title: "Common")
 
 # Tests
 tests = Test.create([
-                      { title: "Redux", level: 3, category_id: frontend_category.id, author_id: admin.id  },
-                      { title: "Active Record", level: 2, category_id: backend_category.id, author_id: admin.id  },
-                      { title: "HTTP", level: 1, category_id: common_category.id, author_id: admin.id  },
+                      { title: "Redux", level: 3, category_id: frontend_category.id, author_id: admin.id },
+                      { title: "Active Record", level: 2, category_id: backend_category.id, author_id: admin.id },
+                      { title: "HTTP", level: 1, category_id: common_category.id, author_id: admin.id }
                     ])
 
 # Questions and Results
@@ -27,9 +27,10 @@ tests.each do |test|
   Question.create([
                     { body: "First question", test_id: test.id  },
                     { body: "Second question", test_id: test.id },
-                    { body: "Third question", test_id: test.id },
+                    { body: "Third question", test_id: test.id }
                   ])
   Result.create(test_id: test.id, user_id: user.id, completed: true)
+  Result.create(test_id: test.id, user_id: admin.id)
 end
 
 # Answers
@@ -37,6 +38,6 @@ Question.all.each do |question|
   Answer.create([
                   { body: "First answer", question_id: question.id },
                   { body: "Second answer", question_id: question.id },
-                  { body: "Third answer", question_id: question.id },
+                  { body: "Third answer", question_id: question.id }
                 ])
 end
