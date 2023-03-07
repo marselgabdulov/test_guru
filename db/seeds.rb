@@ -31,6 +31,7 @@ tests.each do |test|
                                 ])
   Result.create!(test_id: test.id, user_id: user.id, completed: true)
   Result.create!(test_id: test.id, user_id: admin.id)
+  TestPassage.create!(test_id: test.id, user_id: user.id)
 end
 
 # Answers
