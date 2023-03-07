@@ -29,8 +29,6 @@ tests.each do |test|
                                   { body: "Second question", test_id: test.id },
                                   { body: "Third question", test_id: test.id }
                                 ])
-  Result.create!(test_id: test.id, user_id: user.id, completed: true)
-  Result.create!(test_id: test.id, user_id: admin.id)
   TestPassage.create!(test_id: test.id, user_id: user.id)
 end
 
