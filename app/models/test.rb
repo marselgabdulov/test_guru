@@ -6,6 +6,9 @@ class Test < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
+  validate :title, presence: true
+  validate :level, presence: true
+
   scope :easy,    -> { level(0..1) }
   scope :medium,  -> { level(2..4) }
   scope :hard,    -> { level(5..Float::INFINITY) }
