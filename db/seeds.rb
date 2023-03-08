@@ -17,27 +17,26 @@ common_category = Category.create!(title: "Common")
 
 # Tests
 tests = Test.create!([
-                       { title: "Redux", level: 3, category_id: frontend_category.id, author_id: admin.id },
-                       { title: "Active Record", level: 2, category_id: backend_category.id, author_id: admin.id },
-                       { title: "HTTP", level: 1, category_id: common_category.id, author_id: admin.id }
+                       { title: "Redux", level: 3, category_id: frontend_category.id, author: admin },
+                       { title: "Active Record", level: 2, category_id: backend_category.id, author: admin },
+                       { title: "HTTP", level: 1, category_id: common_category.id, author: admin }
                      ])
 
 # Questions and Results
 tests.each do |test|
   @questions = Question.create!([
-                                  { body: "First question", test_id: test.id },
-                                  { body: "Second question", test_id: test.id },
-                                  { body: "Third question", test_id: test.id }
+                                  { body: "First question", test: test },
+                                  { body: "Second question", test: test },
+                                  { body: "Third question", test: test }
                                 ])
-  Result.create!(test_id: test.id, user_id: user.id, completed: true)
-  Result.create!(test_id: test.id, user_id: admin.id)
+  TestPassage.create!(test: test, user: user)
 end
 
 # Answers
 @questions.each do |question|
   Answer.create!([
-                   { body: "First answer", question_id: question.id, correct: true },
-                   { body: "Second answer", question_id: question.id },
-                   { body: "Third answer", question_id: question.id }
+                   { body: "First answer", question: question, correct: true },
+                   { body: "Second answer", question: question },
+                   { body: "Third answer", question: question }
                  ])
 end
