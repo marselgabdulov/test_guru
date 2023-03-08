@@ -6,6 +6,10 @@ class Test < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
+  scope :easy,    -> { level(0..1) }
+  scope :medium,  -> { level(2..4) }
+  scope :hard,    -> { level(5..Float::INFINITY) }
+
   def self.tests_by_category(category_name)
     joins(:category)
       .where(categories: { title: category_name })
