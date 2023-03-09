@@ -6,9 +6,9 @@ class Test < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
-  validate :title, presence: true
-  validate :level, presence: true, numeraticality: { greater_than_or_equal_to: 0, only_integer: true }
-  validate :title, uniqueness: { scope: :level }
+  validates :title, presence: true
+  validates :level, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :title, uniqueness: { scope: :level }
 
   scope :easy,    -> { level(0..1) }
   scope :medium,  -> { level(2..4) }
