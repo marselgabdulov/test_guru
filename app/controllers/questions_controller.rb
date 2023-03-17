@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new]
+  before_action :find_test, only: %i[index new create]
   before_action :find_question, only: [:show]
 
   def index
@@ -12,6 +12,16 @@ class QuestionsController < ApplicationController
 
   def new; end
 
+  def create
+    @question = Question.new question_params
+
+    if @question.save
+      redirect_to @question
+    else
+      redirect_to new_test_question_path
+    end
+  end
+
   private
 
   def find_test
@@ -23,6 +33,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body, :test_id)
   end
 end
