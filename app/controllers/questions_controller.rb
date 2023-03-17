@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: [:show]
+  before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -22,6 +22,12 @@ class QuestionsController < ApplicationController
     else
       redirect_to new_test_question_path
     end
+  end
+
+  def destroy
+    @question.destroy
+
+    redirect_to test_questions_path
   end
 
   private
