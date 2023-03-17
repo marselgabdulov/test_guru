@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    @question = Question.new question_params
+    @question = @test.questions.new question_params
 
     if @question.save
       redirect_to @question
@@ -45,6 +45,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 end
