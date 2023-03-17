@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index]
+  before_action :find_test, only: %i[index new]
   before_action :find_question, only: [:show]
 
   def index
@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def show
     render inline: "<p><%= @question.body %></p>"
   end
+
+  def new; end
 
   private
 
