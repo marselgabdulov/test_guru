@@ -20,14 +20,14 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question
     else
-      redirect_to new_test_question_path
+      render "new"
     end
   end
 
   def destroy
     @question.destroy
 
-    redirect_to test_questions_path
+    redirect_to test_questions_path(@test)
   end
 
   private
