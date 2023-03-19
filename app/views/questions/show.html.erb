@@ -1,4 +1,4 @@
 <%= @question.body %>
-<%= link_to "Назад", test_path(@question.test) %>
-<%= link_to "Редактировать", edit_question_path(@question) %>
-<%= link_to "Удалить", @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "Back", test_path(@question.test) %>
+<%= link_to "Edit", edit_question_path(@question) %>
+<%= link_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?" } %>
