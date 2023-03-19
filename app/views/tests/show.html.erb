@@ -2,8 +2,6 @@
 <h2>Category: <%= @test.category.title %></h2>
 <h2>Questions:</h2>
 <ul>
-  <% @test.questions.each do |question| %>
-    <li><%= question.body  %> <%= link_to "Подробнее", question_path(question) %></li>
-  <% end %>
+  <%= render @test.questions %>
 </ul>
 <%= link_to "Добавить вопрос", new_test_question_path(@test) %>
