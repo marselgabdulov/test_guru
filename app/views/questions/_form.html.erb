@@ -1,0 +1,12 @@
+<h1><%= question_header(@question) %></h1>
+<%= form_with(model: [@test, @question]) do |f| %>
+  <%= render 'shared/errors', resourse: @question %>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_field :body, id: :question_body %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
