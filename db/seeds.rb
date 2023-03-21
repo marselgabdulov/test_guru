@@ -35,8 +35,8 @@ end
 # Answers
 @questions.each do |question|
   Answer.create!([
-                   { body: "First answer", question: question, correct: true },
-                   { body: "Second answer", question: question },
-                   { body: "Third answer", question: question }
+                   { body: "First answer", question_id: question.id, correct: true },
+                   { body: "Second answer", question_id: question.id },
+                   { body: "Third answer", question_id: question.id }
                  ])
 end
