@@ -19,6 +19,14 @@ class TestPassage < ApplicationRecord
     result_percentage >= PASS_SCORE
   end
 
+  def question_index_number
+    test.questions.index(current_question) + 1
+  end
+
+  def number_of_questions
+    test.questions.count
+  end
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
