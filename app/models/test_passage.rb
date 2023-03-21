@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  PASS_SCORE = 85
+
   belongs_to :test
   belongs_to :user
   belongs_to :current_question, class_name: "Question", optional: true
@@ -14,7 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_pass?
-    result_percentage >= 85
+    result_percentage >= PASS_SCORE
   end
 
   def accept!(answer_ids)
