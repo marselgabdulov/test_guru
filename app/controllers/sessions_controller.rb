@@ -6,9 +6,14 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      request_url = cookies[:request_url]
+      if request_url.nil?
+        redirect_to tests_path
+      else
+        redirect_to request_url
+      end
     else
-      flash.now[:alert] = "Are you a Guru? Verify your email and password, please"
+      flash.now[:alert] = "Are you a Guru? Verify your Email and Password, please"
       render :new
     end
   end
