@@ -12,9 +12,9 @@
 
   <body>
     <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.name %></b></p>
+      <div class="nav user">Welcome, <b><%= current_user.name %></b></div>
+      <div class="nav user"><%= link_to "Logout", logout_path, method: :delete %></div>
     <% end %>
-
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
