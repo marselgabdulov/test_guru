@@ -1,7 +1,0 @@
-<h1>Test name: <%= @test.title %></h1>
-<h2>Category: <%= @test.category.title %></h2>
-<h2>Questions:</h2>
-<ul>
-  <%= render @test.questions %>
-</ul>
-<%= link_to "New question", new_test_question_path(@test) %>
