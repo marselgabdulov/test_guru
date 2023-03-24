@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-admin = User.create!(name: "TestGuru", email: "test-guru@testguru.com", role: "admin")
-user = User.create!(name: "Max", email: "max911@gmail.com", role: "user")
+# admin = Admin.create!(first_name: "John", last_name: "Weak", email: "admin@testguru.com", password: "secret", password_confirmation: "secret")
+# user = User.create!(first_name: "Max", last_name: "Mad", email: "user@testguru.com", password: "secret", password_confirmation: "secret")
+
+user = User.last
+admin = Admin.last
 
 # Categories
 frontend_category = Category.create!(title: "Frontend")
@@ -20,7 +23,7 @@ tests = Test.create!([
                        { title: "Redux", level: 3, category_id: frontend_category.id, author: admin },
                        { title: "Active Record", level: 2, category_id: backend_category.id, author: admin },
                        { title: "HTTP", level: 1, category_id: common_category.id, author: admin }
-                     ])
+                      ])
 
 # Questions and Results
 tests.each do |test|

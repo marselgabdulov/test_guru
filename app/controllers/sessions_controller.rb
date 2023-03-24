@@ -1,20 +1,13 @@
-class SessionsController < ApplicationController
-  def new; end
-
+class SessionsController < Devise::SessionsController
   def create
-    user = User.find_by(email: params[:email])
-
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to(cookies.delete(:requested_url) || tests_path)
+    self.resource = warden.authenticate!(auth_options)
+    set_flash_message(:notice, :signed_in, username: current_user.full_name) if is_navigational_format?
+    sign_in(resource_name, resource)
+    if session[:return_to].blank?
+      respond_with resource, location: after_sign_in_path_for(resource)
     else
-      flash.now[:alert] = "Are you a Guru? Verify your Email and Password, please"
-      render :new
+      redirect_to session[:return_to]
+      session[:return_to] = nil
     end
-  end
-
-  def destroy
-    session.delete(:user_id)
-    redirect_to login_path
   end
 end

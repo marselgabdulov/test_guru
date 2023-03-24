@@ -1,0 +1,15 @@
+<h1>Test name: <%= @test.title %></h1>
+<h2>Category: <%= @test.category.title %></h2>
+<h2>Level: <%= @test.level %></h2>
+<h2>Questions:</h2>
+
+<%= link_to "New question", new_admin_test_question_path(@test) %>
+
+<table>
+  <tbody>
+    <%= render @test.questions %>
+  </tbody>
+</table>
+<%= link_to "Edit", edit_admin_test_path(@test) %>
+<%= link_to "Back", admin_tests_path %>
+<%= button_to "Delete", admin_test_path(@test), method: :delete, data: { confirm: "Are you sure?" } %>
