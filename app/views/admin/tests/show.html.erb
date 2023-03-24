@@ -1,15 +1,14 @@
-<h1>Test name: <%= @test.title %></h1>
-<h2>Category: <%= @test.category.title %></h2>
-<h2>Level: <%= @test.level %></h2>
-<h2>Questions:</h2>
-
-<%= link_to "New question", new_admin_test_question_path(@test) %>
+<h1><%= t(".title")%>: <%= @test.title %></h1>
+<h2><%= t(".category")%>: <%= @test.category.title %></h2>
+<h2><%= t(".level")%>: <%= @test.level %></h2>
+<h2><%= t(".questions")%>: <%= @test.questions.count %> </h2>
 
 <table>
   <tbody>
     <%= render @test.questions %>
   </tbody>
 </table>
-<%= link_to "Edit", edit_admin_test_path(@test) %>
-<%= link_to "Back", admin_tests_path %>
-<%= button_to "Delete", admin_test_path(@test), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to t("link_to.new_question"), new_admin_test_question_path(@test) %>
+<%= link_to t("link_to.edit"), edit_admin_test_path(@test) %>
+<%= link_to t("link_to.back"), admin_tests_path %>
+<%= button_to t("link_to.delete"), admin_test_path(@test), method: :delete, data: { confirm: t("confirm") } %>

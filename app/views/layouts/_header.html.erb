@@ -3,11 +3,11 @@
   <nav class="nav">
     <ul class="nav__items">
       <% if user_signed_in? %>
-        <li class="nav__item">Welcome, <b><%= current_user.full_name %></b> Guru</li>
-        <li class="nav__item"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li class="nav__item"><b><%= t(".greeting", name: current_user.full_name) %></b> </li>
+        <li class="nav__item"><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li class="nav__item"><%= link_to "Login", new_user_session_path %></li>
-        <li class="nav__item"><%= link_to "Signup", new_user_registration_path %></li>
+        <li class="nav__item"><%= link_to t(".login"), new_user_session_path %></li>
+        <li class="nav__item"><%= link_to t(".signup"), new_user_registration_path %></li>
       <% end %>
     </ul>
   </nav>
