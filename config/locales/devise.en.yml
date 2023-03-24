@@ -40,6 +40,8 @@ en:
       user:
         email: "That email has already been used - please try again."
         password: "Password is too short (minimum is 6 characters)"
+        first_name: "First name must exist"
+        last_name: "Last name must exist"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."

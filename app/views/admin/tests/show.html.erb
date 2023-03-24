@@ -6,7 +6,7 @@
 <%= link_to "New question", new_test_question_path(@test) %>
 
 <ol>
-  <%# <%= render @test.questions %> %>
+  <%# <%= render @test.questions %>
   <%= render partial: "questions/question", collection: @test.questions %>
 </ol>
 <%= link_to "Edit", edit_admin_test_path(@test) %>

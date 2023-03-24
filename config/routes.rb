@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namspase :admin do
+  namespace :admin do
     resources :tests
   end
 end
