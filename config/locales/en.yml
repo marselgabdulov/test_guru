@@ -44,6 +44,9 @@ en:
       header: "The %{title} test was completed!"
 
   admin:
+    nav:
+      greeting: "Welcome %{name}"
+      panel: "Admin Panel"
     tests:
       create:
         success: "Test was successfuly created."

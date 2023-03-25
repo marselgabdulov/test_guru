@@ -46,6 +46,9 @@ ru:
       header: "Тест %{title} успешно завершен!"
 
   admin:
+    nav:
+      greeting: "Приветствую %{name}"
+      panel: "Панель Администратора"
     tests:
       create:
         success: "Тест успешно создан."
