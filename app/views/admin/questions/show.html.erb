@@ -1,8 +1,8 @@
 <h1><%= @question.test.title %> Question</h1>
 <p><%= @question.body %></p>
-<%= link_to t("link_to.back"), admin_test_path(@question.test) %>
-<%= link_to t("link_to.edit"), edit_admin_question_path(@question) %>
-<%= button_to t("link_to.delete"), admin_question_path(@question), method: :delete, data: { confirm: t("confirm") } %>
+<%= link_to t("action.back"), admin_test_path(@question.test) %>
+<%= link_to t("action.edit"), edit_admin_question_path(@question) %>
+<%= button_to t("action.delete"), admin_question_path(@question), method: :delete, data: { confirm: t("confirm") } %>
 <h2>Answers</h2>
 
 <ol><%= render @question.answers %></ol>

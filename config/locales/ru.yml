@@ -10,13 +10,15 @@ ru:
         level: "Уровень"
         category_id: "Категория"
   link_to:
+    new_test: "Cоздать тест"
+    new_question: "Cоздать вопрос"
+    new_answer: "Cоздать ответ"
+
+  action:
     show: "Показать"
     edit: "Редактировать"
     delete: "Удалить"
     back: "Назад"
-    new_test: "Cоздать тест"
-    new_question: "Cоздать вопрос"
-    new_answer: "Cоздать ответ"
   confirm: "Вы уверены?"
 
   shared:
@@ -55,11 +57,17 @@ ru:
         level: "Уровень"
         questions: "Количество вопросов"
         actions: "Действия"
+      new:
+        title: "Новый Тест"
+      edit:
+        title: "Редактировать тест"
       show:
         title: "Заголовок"
         level: "Уровень"
         questions: "Количество вопросов"
         actions: "Действия"
+      form:
+        category: "Выбрать категорию"
     answers:
       edit: "Редактирование ответа"
       new: "Новый ответ"

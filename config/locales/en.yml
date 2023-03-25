@@ -10,13 +10,14 @@ en:
         level: "Level"
         category_id: "Category"
   link_to:
-      show: "Show"
-      edit: "Edit"
-      delete: "Delete"
-      back: "Back"
-      new_test: "New Test"
-      new_question: "New Question"
-      new_answer: "New Answer"
+    new_test: "New Test"
+    new_question: "New Question"
+    new_answer: "New Answer"
+  action:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
   confirm: "Are you sure?"
 
   shared:
@@ -54,11 +55,17 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+      new:
+        title: "New Test"
+      edit:
+        title: "Edit Test"
       show:
         title: "Title"
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+      form:
+        category: "Select Category"
     answers:
       edit: "Editing Answer"
       new: "New Answer"
