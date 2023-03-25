@@ -3,14 +3,14 @@
 <p><%= @answer.question.body %></p>
 
 <p>
-  <p>Answer:</p>
+  <p><%= t(".answer") %>:</p>
   <%= @answer.body %>
 </p>
 
 <p>
-  <p>Correct:</p>
+  <p><%= t(".correct") %>:</p>
   <%= @answer.correct %>
 </p>
 
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t("action.edit"), edit_admin_answer_path(@answer) %> |
+<%= link_to t("action.back"), admin_question_path(@answer.question) %>
