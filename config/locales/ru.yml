@@ -83,8 +83,8 @@ ru:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
 
-  layouts:
-    header:
+  shared:
+    nav:
       greeting: "Приветствую Гуру %{name}"
       logout: "Выйти"
       login: "Войти"

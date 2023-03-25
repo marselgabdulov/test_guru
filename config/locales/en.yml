@@ -80,8 +80,8 @@ en:
     completed_test:
       subject: "You just completed the TestGuru test"
 
-  layouts:
-    header:
+  shared:
+    nav:
       greeting: "Welcome, %{name} Guru"
       logout: "Logout"
       login: "Login"
