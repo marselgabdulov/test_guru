@@ -1,0 +1,22 @@
+<% if @gists.present?%>
+<div class="row justify-content-center">
+  <div class="col col-md-8">
+    <h2><%= t('.header') %></h2>
+
+    <table class="table table-hover mt-3 mb-3 table-bordered">
+      <thead  class="table-light">
+          <tr>
+            <th scope="col" class="text-center"><%= t('.questions') %></th>
+            <th scope="col" class="text-center"><%= t('.gist_url') %></th>
+            <th scope="col" class="text-center"><%= t('.user') %></th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <%= render @gists %>
+        <tbody>
+    </table>
+  </div>
+</div>
+<% else %>
+  <p><%= t('.notests') %></p>
+<% end %>
