@@ -34,7 +34,6 @@ en:
       questions: "Questions"
       actions: "Actions"
 
-
   test_passages:
     show:
       header: "Passing the %{title} test"
@@ -42,6 +41,11 @@ en:
       next: "Next"
     result:
       header: "The %{title} test was completed!"
+
+  gists:
+    create:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist!"
 
   admin:
     nav:
@@ -88,3 +92,7 @@ en:
       signup: "Signup"
     footer:
       message: "Training project of online school"
+
+  services:
+    gist_question_service:
+      description: "A question about %{test_title} from TestGuru"

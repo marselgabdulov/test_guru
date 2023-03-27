@@ -37,6 +37,11 @@ ru:
       questions: "Количество вопросов"
       actions: "Действия"
 
+  gists:
+    create:
+      success: "Gist успешно создан!"
+      failure: "Во время сохранения gist произошла ошибка!"
+
   test_passages:
     show:
       header: "Прохождение теста '%{title}'"
@@ -91,3 +96,7 @@ ru:
       signup: "Зарегистрироваться"
     footer:
       message: "Учебный проект в онлайн школе"
+
+  services:
+    gist_question_service:
+      description: "Вопрос %{test_title} от TestGuru"
