@@ -92,3 +92,6 @@ en:
       signup: "Signup"
     footer:
       message: "Training project of online school"
+
+  services:
+    description: "A question about %{test_title} from TestGuru"

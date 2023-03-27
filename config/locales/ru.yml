@@ -96,3 +96,6 @@ ru:
       signup: "Зарегистрироваться"
     footer:
       message: "Учебный проект в онлайн школе"
+
+  services:
+    description: "Вопрос %{test_title} от TestGuru"
