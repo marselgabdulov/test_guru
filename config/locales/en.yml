@@ -34,7 +34,6 @@ en:
       questions: "Questions"
       actions: "Actions"
 
-
   test_passages:
     show:
       header: "Passing the %{title} test"
@@ -42,7 +41,9 @@ en:
       next: "Next"
     result:
       header: "The %{title} test was completed!"
-    gist:
+
+  gists:
+    create:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist!"
 

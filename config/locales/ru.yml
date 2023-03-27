@@ -37,6 +37,11 @@ ru:
       questions: "Количество вопросов"
       actions: "Действия"
 
+  gists:
+    create:
+      success: "Gist успешно создан!"
+      failure: "Во время сохранения gist произошла ошибка!"
+
   test_passages:
     show:
       header: "Прохождение теста '%{title}'"
@@ -44,9 +49,6 @@ ru:
       next: "Следующий вопрос"
     result:
       header: "Тест %{title} успешно завершен!"
-    gist:
-      success: "Gist успешно сохранен!"
-      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:
