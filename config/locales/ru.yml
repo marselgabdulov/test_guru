@@ -98,4 +98,5 @@ ru:
       message: "Учебный проект в онлайн школе"
 
   services:
-    description: "Вопрос %{test_title} от TestGuru"
+    gist_question_service:
+      description: "Вопрос %{test_title} от TestGuru"
