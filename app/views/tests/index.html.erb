@@ -1,8 +1,12 @@
 <h1><%= t(".header") %></h1>
 <table class="table">
-  <thead>
+  <thead class="table-dark">
     <tr>
-      <th scope="col"><%= t(".title") %></th>
+      <th scope="col" class="sort-by-title pointer">
+        <%= t(".title") %>
+        <%= octicon "arrow-up", class: "text-success hide"%>
+        <%= octicon "arrow-down", class: "text-success hide"%>
+      </th>
       <th scope="col"><%= t(".level") %></th>
       <th scope="col"><%= t(".questions") %></th>
       <th scope="col"><%= t(".actions") %></th>
@@ -10,3 +14,4 @@
   <thead>
   <%= render @tests %>
 </table>
+<%= javascript_pack_tag 'utilities/sorting' %>

@@ -1,14 +1,19 @@
-<h1><%= t('.header') %></h1>
-<%= link_to t('link_to.new_test'), new_admin_test_path %>
-<br>
+<h1><%= t(".header") %></h1>
 <table class="table">
-  <thead>
+  <thead class="table-dark">
     <tr>
-      <th scope="col"><%= t('.title') %></th>
-      <th scope="col"><%= t('.level') %></th>
-      <th scope="col"><%= t('.questions') %></th>
-      <th scope="col" colspan="3"><%= t('.actions') %></th>
+      <th scope="col" class="sort-by-title pointer">
+        <%= t(".title") %>
+        <%= octicon "arrow-up", class: "text-success hide"%>
+        <%= octicon "arrow-down", class: "text-success hide"%>
+      </th>
+      <th scope="col"><%= t(".level") %></th>
+      <th scope="col"><%= t(".questions") %></th>
+      <th scope="col" colspan="3"><%= t(".actions") %></th>
     </tr>
   </thead>
   <%= render @tests %>
 </table>
+<%= link_to t("link_to.new_test"), new_admin_test_path %>
+
+<%= javascript_pack_tag 'utilities/sorting' %>
