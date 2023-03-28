@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', () => {
-  let control = document.querySelector('.sort-by-title');
+  const control = document.querySelector('.sort-by-title');
   console.log('controling');
 
   if (control) {
