@@ -1,4 +1,6 @@
 <h1><%= t(".header") %></h1>
+<%= link_to t("link_to.new_test"), new_admin_test_path %>
+<%= render "shared/errors", resource: @test %>
 <table class="table">
   <thead class="table-dark">
     <tr>
@@ -14,6 +16,6 @@
   </thead>
   <%= render @tests %>
 </table>
-<%= link_to t("link_to.new_test"), new_admin_test_path %>
 
 <%= javascript_pack_tag 'utilities/sorting' %>
+<%= javascript_pack_tag 'utilities/formInline' %>
