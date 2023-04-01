@@ -1,35 +1,45 @@
+class PasswordChecker {
+  constructor(form) {
+    this.form = form;
+    this.password = form.elements.user_password;
+    this.password_confirm = form.elements.user_password_confirmation;
+    this.setup();
+  }
+
+  checkPassword() {
+    const successIcon = document.getElementById('check-success');
+    const failureIcon = document.getElementById('check-failure');
+
+    if (this.password_confirm.value) {
+      if (this.password.value === this.password_confirm.value) {
+        this.showCheckIcon(successIcon, failureIcon);
+      } else {
+        this.showCheckIcon(failureIcon, successIcon);
+      }
+    } else {
+      successIcon.classList.add('hide');
+      failureIcon.classList.add('hide');
+    }
+  }
+
+  showCheckIcon(firstNode, secondNode) {
+    firstNode.classList.remove('hide');
+    secondNode.classList.add('hide');
+  }
+
+  setup() {
+    this.form.addEventListener('keyup', () => {
+      if (this.password.value != '') {
+        this.checkPassword();
+      }
+    });
+  }
+}
+
 document.addEventListener('turbolinks:load', () => {
   const userForm = document.getElementById('new_user');
 
   if (userForm) {
-    userForm.addEventListener('input', checkPassword);
+    new PasswordChecker(userForm);
   }
 });
-
-function checkPassword() {
-  const passwordField = document.getElementById('user_password');
-  const passwordConfirmationField = document.getElementById(
-    'user_password_confirmation'
-  );
-  const successIcon = document.getElementById('check-success');
-  const failureIcon = document.getElementById('check-failure');
-
-  const password = passwordField.value;
-  const confirmedPassword = passwordConfirmationField.value;
-
-  if (confirmedPassword) {
-    if (password === confirmedPassword) {
-      showCheckIcon(successIcon, failureIcon);
-    } else {
-      showCheckIcon(failureIcon, successIcon);
-    }
-  } else {
-    successIcon.classList.add('hide');
-    failureIcon.classList.add('hide');
-  }
-}
-
-function showCheckIcon(firstNode, secondNode) {
-  firstNode.classList.remove('hide');
-  secondNode.classList.add('hide');
-}

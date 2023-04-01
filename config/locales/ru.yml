@@ -59,6 +59,8 @@ ru:
         success: "Тест успешно создан."
       update:
         success: "Тест успешно обновлен."
+      form_inline:
+        submit: "OK"
       index:
         header: "Доступные тесты"
         title: "Заголовок"

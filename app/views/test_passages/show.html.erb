@@ -1,6 +1,10 @@
 <h1><%= t(".header", title: @test_passage.test.title) %></h1>
 <p><%= t(".number_of_questions", index_number: @test_passage.question_index_number, questions: @test_passage.number_of_questions) %></p>
 
+<div class="progress-bar-container">
+  <%= content_tag :div, "", id: "progress-bar", data: { index_number: @test_passage.question_index_number, number_of_questions: @test_passage.number_of_questions } %>
+</div>
+
 <p>
   <b><%= @test_passage.current_question.body %></b>
 </p>
@@ -12,6 +16,7 @@
       <%= b.label %>
     </p>
   <% end %>
-  <p><%= link_to "Gist Question", gists_path(@test_passage), method: :post %></p>
-  <p><%= f.submit t(".next") %></p>
+  <p><%= link_to "Gist Question", test_passage_gists_path(@test_passage), method: :post %></p>
+  <p><%= f.submit t(".next"), class: "btn btn-primary" %></p>
 <% end %>
+<%= javascript_pack_tag 'utilities/progressBar' %>
