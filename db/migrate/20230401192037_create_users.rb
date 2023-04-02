@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
-class AddDeviseToUsers < ActiveRecord::Migration[6.1]
+class CreateUsers < ActiveRecord::Migration[6.1]
   def self.up
-    change_table :users do |t|
+    create_table :users do |t|
       ## Database authenticatable
+      t.string :type,               null: false, default: "User"
+      t.string :first_name,         null: false, default: ""
+      t.string :last_name,          null: false, default: ""
+      t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -33,26 +37,18 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
 
 
       # Uncomment below if timestamps were not included in your original model.
-      # t.timestamps null: false
+      t.timestamps null: false
     end
-
-    remove_column(:users, :password_digest)
-    change_column_default(:users, :email, "")
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    add_index :users, :type
   end
 
   def self.down
-    remove_columns(:users, :encrypted_password, :reset_password_token, :reset_password_sent_at,
-                           :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at,
-                           :current_sign_in_ip, :last_sign_in_ip, :confirmation_token,
-                           :confirmed_at, :confirmation_sent_at, :unconfirmed_email)
-
-    add_column :users, :password_digest, :string
-    remove_index(:users, :email)
-    change_column_default(:users, :email, nil)
+    # By default, we don't want to make any assumption about how to roll back a migration when your
+    # model already existed. Please edit below which fields you would like to remove in this migration.
+    raise ActiveRecord::IrreversibleMigration
   end
 end

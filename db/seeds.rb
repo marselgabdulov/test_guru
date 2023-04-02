@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-# admin = Admin.create!(first_name: "John", last_name: "Weak", email: "admin@testguru.com", password: "secret", password_confirmation: "secret")
-# user = User.create!(first_name: "Max", last_name: "Mad", email: "user@testguru.com", password: "secret", password_confirmation: "secret")
+admin = Admin.new(first_name: "John", last_name: "Weak", email: "admin@testguru.com", password: "secret")
+admin.skip_confirmation!
+admin.save!
 
-user = User.last
-admin = Admin.last
+user = User.create!(first_name: "Max", last_name: "Mad", email: "user@testguru.com", password: "secret")
+user.skip_confirmation!
+user.save!
 
 # Categories
 frontend_category = Category.create!(title: "Frontend")
