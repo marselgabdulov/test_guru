@@ -92,6 +92,7 @@ en:
       logout: "Logout"
       login: "Login"
       signup: "Signup"
+      feedback: "Feedback"
     footer:
       message: "Training project of online school"
 
