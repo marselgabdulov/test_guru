@@ -27,18 +27,18 @@ tests = Test.create!([
                        { title: "HTTP", level: 1, category_id: common_category.id, author: admin }
                       ])
 
-# Questions and Results
+# Questions and TestPassage
 tests.each do |test|
-  @questions = Question.create!([
-                                  { body: "First question", test: test },
-                                  { body: "Second question", test: test },
-                                  { body: "Third question", test: test }
-                                ])
+  Question.create!([
+                    { body: "First question", test: test },
+                    { body: "Second question", test: test },
+                    { body: "Third question", test: test }
+                  ])
   TestPassage.create!(test: test, user: user)
 end
 
 # Answers
-@questions.each do |question|
+Question.all.each do |question|
   Answer.create!([
                    { body: "First answer", question_id: question.id, correct: true },
                    { body: "Second answer", question_id: question.id },
