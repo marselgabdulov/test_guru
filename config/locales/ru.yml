@@ -54,6 +54,7 @@ ru:
     nav:
       greeting: "Приветствую %{name}"
       panel: "Панель Администратора"
+      logout: "Выйти"
     tests:
       create:
         success: "Тест успешно создан."
