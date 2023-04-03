@@ -2,7 +2,7 @@ class FeedbacksMailer < ApplicationMailer
 
   default to: %{"TestGuru" <admin@testguru.com>}
 
-  def fedbacks_email(fedbacks)
+  def feedbacks_email(fedbacks)
     @name = fedbacks.name
     @body = fedbacks.body
     @email = fedbacks.email
