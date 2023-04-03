@@ -96,6 +96,7 @@ ru:
       greeting: "Приветствую Гуру %{name}"
       logout: "Выйти"
       login: "Войти"
+      feedback: "Обратная связь"
       signup: "Зарегистрироваться"
     footer:
       message: "Учебный проект в онлайн школе"
