@@ -18,6 +18,7 @@ en:
     edit: "Edit"
     delete: "Delete"
     back: "Back"
+    send-email: "Send"
   confirm: "Are you sure?"
 
   shared:
