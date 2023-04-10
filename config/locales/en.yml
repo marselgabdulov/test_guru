@@ -19,6 +19,7 @@ en:
     delete: "Delete"
     back: "Back"
     send-email: "Send"
+    start: "Start"
   confirm: "Are you sure?"
 
   shared:

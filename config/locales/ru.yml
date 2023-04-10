@@ -19,6 +19,7 @@ ru:
     edit: "Редактировать"
     delete: "Удалить"
     back: "Назад"
+    start: "Начать"
     send-email: "Отправить"
   confirm: "Вы уверены?"
 
@@ -56,6 +57,7 @@ ru:
       greeting: "Приветствую %{name}"
       panel: "Панель Администратора"
       logout: "Выйти"
+      feedback: "Обратная связь"
     tests:
       create:
         success: "Тест успешно создан."
@@ -76,6 +78,7 @@ ru:
       show:
         title: "Заголовок"
         level: "Уровень"
+        category: "Категория  "
         questions: "Количество вопросов"
         actions: "Действия"
       form:
