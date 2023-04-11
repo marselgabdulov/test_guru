@@ -7,7 +7,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.save
-      FeedbacksMailer.feedbacks_email(@feedback).deliver_now
+      # FeedbacksMailer.feedbacks_email(@feedback).deliver_now
       redirect_to root_path, notice: "We have recieved your email"
     else
       render :new, status: :unprocessable_entity

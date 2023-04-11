@@ -37,6 +37,8 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      new:
+        header: "Become a Guru"
       user:
         email: "That email has already been used - please try again."
         password: "Password is too short (minimum is 6 characters)"
@@ -51,6 +53,8 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
     sessions:
+      new:
+       header: "Enter the Guru Gates"
       user:
         signed_in: "Welcome %{username}"
       signed_in: "Signed in successfully."
