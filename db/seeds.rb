@@ -8,11 +8,11 @@
 
 # Users
 admin = Admin.new(first_name: "John", last_name: "Weak", email: "admin@testguru.com", password: "secret")
-admin.skip_confirmation!
+# admin.skip_confirmation!
 admin.save!
 
 user = User.new(first_name: "Max", last_name: "Mad", email: "user@testguru.com", password: "secret")
-user.skip_confirmation!
+# user.skip_confirmation!
 user.save!
 
 # Categories
