@@ -54,6 +54,7 @@ ru:
     nav:
       greeting: "Приветствую %{name}"
       panel: "Панель Администратора"
+      logout: "Выйти"
     tests:
       create:
         success: "Тест успешно создан."
@@ -95,6 +96,7 @@ ru:
       greeting: "Приветствую Гуру %{name}"
       logout: "Выйти"
       login: "Войти"
+      feedback: "Обратная связь"
       signup: "Зарегистрироваться"
     footer:
       message: "Учебный проект в онлайн школе"
