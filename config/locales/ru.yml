@@ -1,4 +1,14 @@
 ru:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        current_password: "текущий пароль"
+        email: "электронная почта"
+        password: "пароль"
+        password_confirmation: "подтвердить пароль"
+        remember_me: "запомнить"
   helpers:
     submit:
       test:
@@ -19,6 +29,9 @@ ru:
     edit: "Редактировать"
     delete: "Удалить"
     back: "Назад"
+    start: "Начать"
+    send-email: "Отправить"
+    sign_up: "Зарегистрироваться"
   confirm: "Вы уверены?"
 
   shared:
@@ -47,6 +60,7 @@ ru:
       header: "Прохождение теста '%{title}'"
       number_of_questions: "Вопрос номер %{index_number} из %{questions}"
       next: "Следующий вопрос"
+      gist_question: "Создать Гист"
     result:
       header: "Тест %{title} успешно завершен!"
 
@@ -55,6 +69,7 @@ ru:
       greeting: "Приветствую %{name}"
       panel: "Панель Администратора"
       logout: "Выйти"
+      feedback: "Обратная связь"
     tests:
       create:
         success: "Тест успешно создан."
@@ -75,6 +90,7 @@ ru:
       show:
         title: "Заголовок"
         level: "Уровень"
+        category: "Категория  "
         questions: "Количество вопросов"
         actions: "Действия"
       form:
@@ -85,6 +101,9 @@ ru:
       show:
         answer: "Ответ"
         correct: "Верный ответ"
+    questions:
+      show:
+        answers: "Ответы"
 
 
   tests_mailer:

@@ -1,20 +1,20 @@
-<%= form_with model: @feedback, locale: true do |form| %>
+<%= form_with model: @feedback, locale: true do |f| %>
   <%= render 'shared/errors', resource: @feedback %>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name, id: :feedback_name%>
-  </p>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, id: :feedback_name%>
+  </div>
 
-  <p>
-    <%= form.label :email %><br>
-    <%= form.text_field :email, id: :feedback_email%>
-  </p>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, id: :feedback_email%>
+  </div>
 
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body, id: :feedback_body %>
-  </p>
+  <div class="form-group">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, id: :feedback_body %>
+  </div>
 
-  <p><%= form.submit %></p>
+  <div class="form-group"><%= f.submit t("action.send-email"), class: "btn btn-primary" %></div>
 <% end %>
