@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-# admin = Admin.create!(first_name: "John", last_name: "Weak", email: "admin@testguru.com", password: "secret", password_confirmation: "secret")
-# user = User.create!(first_name: "Max", last_name: "Mad", email: "user@testguru.com", password: "secret", password_confirmation: "secret")
+admin = Admin.new(first_name: "John", last_name: "Weak", email: "admin@testguru.com", password: "secret")
+# admin.skip_confirmation!
+admin.save!
 
-user = User.last
-admin = Admin.last
+user = User.new(first_name: "Max", last_name: "Mad", email: "user@testguru.com", password: "secret")
+# user.skip_confirmation!
+user.save!
 
 # Categories
 frontend_category = Category.create!(title: "Frontend")
@@ -25,18 +27,18 @@ tests = Test.create!([
                        { title: "HTTP", level: 1, category_id: common_category.id, author: admin }
                       ])
 
-# Questions and Results
+# Questions and TestPassage
 tests.each do |test|
-  @questions = Question.create!([
-                                  { body: "First question", test: test },
-                                  { body: "Second question", test: test },
-                                  { body: "Third question", test: test }
-                                ])
+  Question.create!([
+                    { body: "First question", test: test },
+                    { body: "Second question", test: test },
+                    { body: "Third question", test: test }
+                  ])
   TestPassage.create!(test: test, user: user)
 end
 
 # Answers
-@questions.each do |question|
+Question.all.each do |question|
   Answer.create!([
                    { body: "First answer", question_id: question.id, correct: true },
                    { body: "Second answer", question_id: question.id },

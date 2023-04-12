@@ -4,6 +4,7 @@
     <span class="navbar-text"><%= t(".panel") %></span>
     <span class="navbar-text">
       <%= t(".greeting", name: current_user.full_name) %>
+      <%= link_to t(".feedback"), new_feedback_path %> |
       <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
     </span>
   </nav>

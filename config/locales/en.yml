@@ -1,4 +1,14 @@
 en:
+  activerecord:
+    attributes:
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+        current_password: "current password"
+        email: "email"
+        password: "password"
+        password_confirmation: "confirm password"
+        remember_me: "Remember me"
   helpers:
     submit:
       test:
@@ -18,6 +28,8 @@ en:
     edit: "Edit"
     delete: "Delete"
     back: "Back"
+    send-email: "Send"
+    start: "Start"
   confirm: "Are you sure?"
 
   shared:
@@ -39,6 +51,7 @@ en:
       header: "Passing the %{title} test"
       number_of_questions: "Question number %{index_number} of %{questions}"
       next: "Next"
+      gist_question: "Gist Question"
     result:
       header: "The %{title} test was completed!"
 
@@ -81,6 +94,9 @@ en:
       show:
         answer: "Answer"
         correct: "Correct"
+    questions:
+      show:
+        answers: "Answers"
 
   tests_mailer:
     completed_test:
@@ -92,6 +108,7 @@ en:
       logout: "Logout"
       login: "Login"
       signup: "Signup"
+      feedback: "Feedback"
     footer:
       message: "Training project of online school"
 
