@@ -1,56 +1,58 @@
-class Admin::QuestionsController < ApplicationController
-  before_action :set_test, only: %i[new create]
-  before_action :set_question, only: %i[show edit update destroy]
+module Admin
+  class QuestionsController < ApplicationController
+    before_action :set_test, only: %i[new create]
+    before_action :set_question, only: %i[show edit update destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+    rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def show; end
+    def show; end
 
-  def new
-    @question = @test.questions.new
-  end
-
-  def create
-    @question = @test.questions.new question_params
-
-    if @question.save
-      redirect_to admin_question_path(@question)
-    else
-      render :new
+    def new
+      @question = @test.questions.new
     end
-  end
 
-  def edit; end
+    def create
+      @question = @test.questions.new question_params
 
-  def update
-    if @question.update question_params
-      redirect_to admin_question_path(@question)
-    else
-      render :edit
+      if @question.save
+        redirect_to admin_question_path(@question)
+      else
+        render :new
+      end
     end
-  end
 
-  def destroy
-    @question.destroy
+    def edit; end
 
-    redirect_to admin_test_url(@question.test), notice: "Question was destroyed"
-  end
+    def update
+      if @question.update question_params
+        redirect_to admin_question_path(@question)
+      else
+        render :edit
+      end
+    end
 
-  private
+    def destroy
+      @question.destroy
 
-  def set_test
-    @test = Test.find(params[:test_id])
-  end
+      redirect_to admin_test_url(@question.test), notice: "Question was destroyed"
+    end
 
-  def set_question
-    @question = Question.find(params[:id])
-  end
+    private
 
-  def rescue_with_question_not_found
-    render plain: "Question was not found"
-  end
+    def set_test
+      @test = Test.find(params[:test_id])
+    end
 
-  def question_params
-    params.require(:question).permit(:body)
+    def set_question
+      @question = Question.find(params[:id])
+    end
+
+    def rescue_with_question_not_found
+      render plain: "Question was not found"
+    end
+
+    def question_params
+      params.require(:question).permit(:body)
+    end
   end
 end
