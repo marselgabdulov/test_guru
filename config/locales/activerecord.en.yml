@@ -6,6 +6,19 @@ en:
     attributes:
       test:
         title: "Title"
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+        current_password: "current password"
+        email: "email"
+        password: "password"
+        password_confirmation: "confirm password"
+        remember_me: "Remember me"
+      badge:
+        name: "Name"
+        rule_type: "Rule Type"
+        rule_value: "Rule Value"
+        image_url: "Image URL"
 
     errors:
       messages:

@@ -1,19 +1,12 @@
 ru:
-  activerecord:
-    attributes:
-      user:
-        first_name: "Имя"
-        last_name: "Фамилия"
-        current_password: "текущий пароль"
-        email: "электронная почта"
-        password: "пароль"
-        password_confirmation: "подтвердить пароль"
-        remember_me: "запомнить"
   helpers:
     submit:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
+      badge:
+        create: "Создать Бэйдж"
+        update: "Обновить Бэйдж"
     label:
       test:
         title: "Заголовок"
@@ -63,6 +56,15 @@ ru:
       gist_question: "Создать Гист"
     result:
       header: "Тест %{title} успешно завершен!"
+  badges:
+    index:
+      header: "Бэйджи"
+      all_badges: "Все Бэйджи"
+      user_badges: "Ваши Бэйджи"
+      name: "Название"
+      badge: "Бэйдж"
+      rule: "Правило"
+      no_badges: "У Вас еще нет ни одного бэйджа"
 
   admin:
     nav:
@@ -104,7 +106,18 @@ ru:
     questions:
       show:
         answers: "Ответы"
-
+    badges:
+      index:
+        header: "Список бэйджей"
+        name: "Название"
+        image: "Изоражение"
+        rule: "Правило"
+        actions: "Действия"
+        create_badge: "Создать бэйдж"
+      new:
+        header: "Создать бэйдж"
+      edit:
+        header: "Редактирвать бэйдж"
 
   tests_mailer:
     completed_test:

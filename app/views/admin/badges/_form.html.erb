@@ -1,0 +1,23 @@
+<%= form_with model: [:admin, @badge], local: true do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+  <div class="form-group">
+    <%= f.label :name, t("activerecord.attributes.badge.name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image_url, t("activerecord.attributes.badge.image_url") %>
+    <%= f.text_field :image_url, class: "form-control" %>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :rule_type, t("activerecord.attributes.badge.rule_type") %>
+    <%= f.select :rule_type, Badge::BADGES_TYPES.map { |type| [ t(type), type ] }, prompt: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rule_value, t("activerecord.attributes.badge.rule_value") %>
+    <%= f.text_field :rule_value, class: "form-control" %>
+  </div>
+  <%= f.submit nil, class: "btn btn-primary" %>
+<% end %>
