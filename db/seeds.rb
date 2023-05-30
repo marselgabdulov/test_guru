@@ -35,7 +35,7 @@ tests.each do |test|
                      { body: "Second question", test: test },
                      { body: "Third question", test: test }
                    ])
-  TestPassage.create!(test: test, user: user)
+  # TestPassage.create!(test: test, user: user)
 end
 
 # Answers
@@ -46,3 +46,20 @@ Question.all.each do |question|
                    { body: "Third answer", question_id: question.id }
                  ])
 end
+
+Badge.create!([
+  { name: 'best rookie',
+    image_url: 'https://bipbap.ru/wp-content/uploads/2019/05/86ae0b2400c92d333751c8d9a9ae68e4.png',
+    rule_type: :first_try,
+    rule_value: nil },
+
+  { name: 'Category',
+    image_url: 'https://bipbap.ru/wp-content/uploads/2019/05/orig-3-10.jpg',
+    rule_type: :all_by_category,
+    rule_value: 'Frontend' },
+
+  { name: 'Level',
+    image_url: 'https://bipbap.ru/wp-content/uploads/2019/05/orig-21.jpg',
+    rule_type: :all_on_level,
+    rule_value: 1}
+])

@@ -136,3 +136,7 @@ ru:
   services:
     gist_question_service:
       description: "Вопрос %{test_title} от TestGuru"
+
+  first_try: "Пройти тест с первой попытки"
+  all_by_category: "Пройти все тесты в категории"
+  all_on_level: "Пройти все тесты уровня"

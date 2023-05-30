@@ -1,8 +1,9 @@
 class Badge < ApplicationRecord
-  BADGES_TYPES = %i[first_time all_by_level all_of_category].freeze
-  has_many :appointments
-  has_many :user, through: :appointments
+  BADGE_TYPES = [:first_try, :all_by_category, :all_on_level].freeze
 
-  validates :name, :image_url, :rule_type, :rule_value, presence: true
+  has_many :user_badges
+  has_many :user, through: :user_badges
+
+  validates :name, :image_url, :rule_type, presence: true
   validates :name, uniqueness: true
 end

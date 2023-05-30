@@ -9,7 +9,7 @@
   	  <th><%= t(".badge") %></th>
   	  <th><%= t(".rule_type") %></th>
   	</tr>
-  	<%= render partial: "user_badges", collection: @user_badges, as: :user_badge %>
+  	<%= render partial: "user_badge", collection: @user_badges, as: :user_badge %>
   </table>
 <% else %>
   <p><%= t(".no_badges")%></p>

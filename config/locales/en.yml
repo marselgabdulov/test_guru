@@ -130,3 +130,7 @@ en:
   services:
     gist_question_service:
       description: "A question about %{test_title} from TestGuru"
+
+  first_try: "Pass the test on first try"
+  all_by_category: "Pass all tests in a category"
+  all_on_level: "Pass all level tests"
