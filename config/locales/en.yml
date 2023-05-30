@@ -1,19 +1,12 @@
 en:
-  activerecord:
-    attributes:
-      user:
-        first_name: "First Name"
-        last_name: "Last Name"
-        current_password: "current password"
-        email: "email"
-        password: "password"
-        password_confirmation: "confirm password"
-        remember_me: "Remember me"
   helpers:
     submit:
       test:
         create: "Create Test"
         update: "Update Test"
+      badge:
+        create: "Create Badge"
+        update: "Updage Badge"
     label:
       test:
         title: "Title"
@@ -45,6 +38,10 @@ en:
       level: "Level"
       questions: "Questions"
       actions: "Actions"
+    new:
+      header: "New Badge"
+    edit:
+      header: "Edit Badge"
 
   test_passages:
     show:
@@ -59,6 +56,16 @@ en:
     create:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist!"
+
+  badges:
+    index:
+      header: "Badges"
+      all_badges: "All Badges"
+      user_badges: "Your Badges"
+      name: "Name"
+      badge: "Badge"
+      rule: "Rule"
+      no_badges: "You have no badges yet"
 
   admin:
     nav:
@@ -97,6 +104,14 @@ en:
     questions:
       show:
         answers: "Answers"
+    badges:
+      index:
+        header: "List of Badges"
+        name: "Name"
+        image: "Image"
+        rule: "Rule"
+        actions: "Actions"
+        create_badge: "new badge"
 
   tests_mailer:
     completed_test:
@@ -115,3 +130,7 @@ en:
   services:
     gist_question_service:
       description: "A question about %{test_title} from TestGuru"
+
+  first_try: "Pass the test on first try"
+  all_by_category: "Pass all tests in a category"
+  all_on_level: "Pass all level tests"

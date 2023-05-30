@@ -1,0 +1,29 @@
+<h1><%= t(".header") %></h1>
+
+<% if @user_badges.present? %>
+  <h2><%= t(".user_badges") %></h2>
+
+  <table class='table'>
+  	<tr>
+  	  <th><%= t(".name") %></th>
+  	  <th><%= t(".badge") %></th>
+  	  <th><%= t(".rule_type") %></th>
+  	</tr>
+  	<%= render partial: "user_badge", collection: @user_badges, as: :user_badge %>
+  </table>
+<% else %>
+  <p><%= t(".no_badges")%></p>
+<% end %>
+
+<h2><%= t(".all_badges") %></h2>
+
+<table class='table'>
+  <tr>
+  	  <th><%= t(".name") %></th>
+  	  <th><%= t(".badge") %></th>
+      <th><%= t(".rule_type") %></th>
+  	</tr>
+  <%= render @badges %>
+</table>
+
+<%= link_to t("action.back"), tests_path %>

@@ -3,10 +3,9 @@ class TestPassage < ApplicationRecord
 
   belongs_to :test
   belongs_to :user
-  belongs_to :current_question, class_name: "Question", optional: true
+  belongs_to :current_question, class_name: "Question", optional: true, foreign_key: 'question_id'
 
   before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_set_next_question, on: :update
 
   def completed?
     current_question.nil?
@@ -20,6 +19,10 @@ class TestPassage < ApplicationRecord
     result_percentage >= PASS_SCORE
   end
 
+  def mark_as_passed
+    update(passed: true) if test_pass?
+  end
+
   def question_index_number
     test.questions.index(current_question) + 1
   end
@@ -30,6 +33,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.current_question = next_question
     save!
   end
 
@@ -37,10 +41,6 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
-  end
-
-  def before_validation_set_next_question
-    self.current_question = next_question
   end
 
   def next_question

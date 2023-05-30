@@ -6,6 +6,19 @@ ru:
     attributes:
       test:
         title: "Название"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        current_password: "текущий пароль"
+        email: "электронная почта"
+        password: "пароль"
+        password_confirmation: "подтвердить пароль"
+        remember_me: "запомнить"
+      badge:
+        name: "Название"
+        rule_type: "Тип правила"
+        rule_value: "Значение правила"
+        image_url: "Ссылка на изображение"
 
     errors:
       messages:

@@ -26,16 +26,16 @@ tests = Test.create!([
                        { title: "Redux", level: 3, category_id: frontend_category.id, author: admin },
                        { title: "Active Record", level: 2, category_id: backend_category.id, author: admin },
                        { title: "HTTP", level: 1, category_id: common_category.id, author: admin }
-                      ])
+                     ])
 
 # Questions and TestPassage
 tests.each do |test|
   Question.create!([
-                    { body: "First question", test: test },
-                    { body: "Second question", test: test },
-                    { body: "Third question", test: test }
-                  ])
-  TestPassage.create!(test: test, user: user)
+                     { body: "First question", test: test },
+                     { body: "Second question", test: test },
+                     { body: "Third question", test: test }
+                   ])
+  # TestPassage.create!(test: test, user: user)
 end
 
 # Answers
@@ -46,3 +46,20 @@ Question.all.each do |question|
                    { body: "Third answer", question_id: question.id }
                  ])
 end
+
+Badge.create!([
+  { name: 'best rookie',
+    image_url: 'https://bipbap.ru/wp-content/uploads/2019/05/86ae0b2400c92d333751c8d9a9ae68e4.png',
+    rule_type: :first_try,
+    rule_value: nil },
+
+  { name: 'Category',
+    image_url: 'https://bipbap.ru/wp-content/uploads/2019/05/orig-3-10.jpg',
+    rule_type: :all_by_category,
+    rule_value: 'Frontend' },
+
+  { name: 'Level',
+    image_url: 'https://bipbap.ru/wp-content/uploads/2019/05/orig-21.jpg',
+    rule_type: :all_on_level,
+    rule_value: 1}
+])
