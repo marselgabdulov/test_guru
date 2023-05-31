@@ -16,7 +16,11 @@ class TestPassage < ApplicationRecord
   end
 
   def test_pass?
-    result_percentage >= PASS_SCORE
+    result_percentage >= PASS_SCORE || countdown <= 0
+  end
+
+  def countdown
+    self.created_at + self.test.time_to_pass * 60 - Time.current if self.test.time_to_pass
   end
 
   def mark_as_passed
