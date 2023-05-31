@@ -16,6 +16,11 @@
   </div>
 
   <div>
+    <%= f.label :time_to_pass, class: "form-label" %>
+    <%= f.number_field :time_to_pass, id: :time_to_pass, min: 1, step: 1 %>
+  </div>
+
+  <div>
     <%= f.submit %>
   </div>
 <% end %>

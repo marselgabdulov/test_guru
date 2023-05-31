@@ -6,6 +6,7 @@ ru:
     attributes:
       test:
         title: "Название"
+        time_to_pass: "Таймер в минутах"
       user:
         first_name: "Имя"
         last_name: "Фамилия"

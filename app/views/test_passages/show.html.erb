@@ -5,11 +5,16 @@
   <%= content_tag :div, "", id: "progress-bar", data: { index_number: @test_passage.question_index_number, number_of_questions: @test_passage.number_of_questions } %>
 </div>
 
+<div class="timer-container">
+  <p><%= t('.time_to_pass') %></p>
+  <%= content_tag :div, "", class: "time-left", id: "timer", data: { countdown: @test_passage.countdown.round, time_over: "#{t('.time_over')}" } %>
+</div>
+
 <p>
   <b><%= @test_passage.current_question.body %></b>
 </p>
 
-<%= form_with url: test_passage_path(@test_passage), method: :put, local: true do |f| %>
+<%= form_with url: test_passage_path(@test_passage), method: :put, id: "test_passage_form", local: true do |f| %>
   <%= f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
@@ -17,6 +22,7 @@
     </p>
   <% end %>
   <p><%= link_to t(".gist_question"), gists_path(@test_passage), method: :post %></p>
-  <p><%= f.submit t(".next"), class: "btn btn-primary" %></p>
+  <p><%= f.submit t(".next"), class: "btn btn-primary", id: "submit_question" %></p>
 <% end %>
 <%= javascript_pack_tag 'utilities/progressBar' %>
+<%= javascript_pack_tag 'utilities/timer' %>
