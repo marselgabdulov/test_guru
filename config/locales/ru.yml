@@ -41,6 +41,7 @@ ru:
       title: "Заголовок"
       level: "Уровень"
       questions: "Количество вопросов"
+      time_to_pass: "Времени до завершения"
       actions: "Действия"
 
   gists:
@@ -54,6 +55,8 @@ ru:
       number_of_questions: "Вопрос номер %{index_number} из %{questions}"
       next: "Следующий вопрос"
       gist_question: "Создать Гист"
+      time_over: "Время тестирования истекло!"
+      time_to_pass: "Времени до завершения теста: "
     result:
       header: "Тест %{title} успешно завершен!"
   badges:
@@ -84,6 +87,7 @@ ru:
         title: "Заголовок"
         level: "Уровень"
         questions: "Количество вопросов"
+        time_to_pass: "Времени до завершения"
         actions: "Действия"
       new:
         title: "Новый Тест"
@@ -92,7 +96,7 @@ ru:
       show:
         title: "Заголовок"
         level: "Уровень"
-        category: "Категория  "
+        category: "Категория"
         questions: "Количество вопросов"
         actions: "Действия"
       form:

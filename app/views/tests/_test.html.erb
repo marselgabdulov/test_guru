@@ -2,5 +2,6 @@
   <td scope="row"><%= test.title %></td>
   <td scope="row"><%= test.level %></td>
   <td scope="row"><%= test.questions.count %></td>
+  <td scope="row"><%= test.time_to_pass %></td>
   <td scope="row"><%= button_to t("action.start"), start_test_path(test), class: "btn btn-primary" %></td>
 </tr>

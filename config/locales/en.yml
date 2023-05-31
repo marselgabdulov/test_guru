@@ -37,6 +37,7 @@ en:
       title: "Title"
       level: "Level"
       questions: "Questions"
+      time_to_pass: "Time_to_pass"
       actions: "Actions"
     new:
       header: "New Badge"
@@ -49,6 +50,8 @@ en:
       number_of_questions: "Question number %{index_number} of %{questions}"
       next: "Next"
       gist_question: "Gist Question"
+      time_over: "Testing time is over!"
+      time_to_pass: "Time to finish the test: "
     result:
       header: "The %{title} test was completed!"
 
@@ -83,6 +86,7 @@ en:
         title: "Title"
         level: "Level"
         questions: "Questions"
+        time_to_pass: "Time_to_pass"
         actions: "Actions"
       new:
         title: "New Test"

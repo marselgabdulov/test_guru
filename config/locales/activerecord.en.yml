@@ -6,6 +6,7 @@ en:
     attributes:
       test:
         title: "Title"
+        time_to_pass: "Time to pass in minutes"
       user:
         first_name: "First Name"
         last_name: "Last Name"
